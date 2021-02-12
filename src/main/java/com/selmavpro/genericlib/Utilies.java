@@ -1,5 +1,7 @@
 package com.selmavpro.genericlib;
 
+import java.util.Set;
+
 import org.openqa.selenium.JavascriptExecutor;  
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +17,7 @@ public class Utilies
 	 * @param ele
 	 * @param text
 	 */
-   public void Dropdown(WebElement ele,String text)
+   public void dropdown(WebElement ele,String text)
    {
 	   Select s=new Select(ele);
 	   s.selectByVisibleText(text);
@@ -72,5 +74,29 @@ public class Utilies
    {
 	   WebDriverWait w=new  WebDriverWait(driver,10);
 	   w.until(ExpectedConditions.elementToBeClickable(element));
+   }
+   
+   public void switchingtab(WebDriver driver)
+   {
+	   Set<String> child = driver.getWindowHandles();
+       for(String b:child)
+       {
+    	   driver.switchTo().window(b); 
+       }
+   }
+   
+   public void navigateurl(WebDriver driver,String url)
+   {
+	   driver.navigate().to(url);
+   }
+   
+   public void frame(WebDriver driver)
+   {
+	   driver.switchTo().frame(0);
+   }
+   
+   public void switchbackfromframe(WebDriver driver)
+   {
+	   driver.switchTo().defaultContent();
    }
 }

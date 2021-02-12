@@ -1,6 +1,6 @@
 package com.selmavpro.genericlib;
 
-import java.io.FileNotFoundException;  
+import java.io.FileNotFoundException;   
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +14,7 @@ public class BaseClass implements AutoConstant
 {
     public WebDriver driver;
     public Propertyfile p;
+    public ExcelData d=new ExcelData();
     public Photo p1;
     public Utilies u=new Utilies();
     @BeforeMethod
